@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên tố</title>
+</head>
+<body>
+<script>
+  let number = +prompt("nhập số lượng số nguyên dương cần kiểm tra");
+  let cnt=0;
+  let i;
+  for (i = 2; i <= number; i++) {
+      if (i % 2 !== 0) {
+          cnt++;
+          if(cnt <= 20) {
+              document.write(`${i}<br>`);
+          }
+      }
+  }
+</script>
+</body>
+</html>

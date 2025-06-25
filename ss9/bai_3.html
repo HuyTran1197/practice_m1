@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy Fibonacci</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhập số nguyên");
+    let x1 = 1;
+    let x2 = 0;
+    let xn;
+    while (n!==20) {
+        n = +prompt("không hợp lệ yêu cầu, vui lòng nhập lại");
+    } if (n===20) {
+        for ( let i = 0; i < n; i++ ) {
+            xn = x1 + x2;
+            document.write(xn+",");
+            x1 = x2;
+            x2 = xn;
+        }
+    }
+</script>
+</body>
+</html>

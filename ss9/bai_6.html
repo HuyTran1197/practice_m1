@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhập số tự nhiên");
+    let sum=0;
+    let count=0;
+    for (let i = 0; i < n; i++) {
+        if (i%7===0) {
+            sum += i;
+            count++;
+        } if (count===30) {
+            break;
+        }
+    }
+    document.write(`<b>Tổng 30 số đầu tiên chia hết cho 7 là : ${sum}</b>`);
+</script>
+</body>
+</html>
