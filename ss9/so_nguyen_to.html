@@ -5,9 +5,8 @@
     <title>Tìm số nguyên tố</title>
 </head>
 <body>
-<h1>20 số nguyên tố đầu tiên lần lượt là:</h1>
 <script>
-    let number = +prompt("nhập số nguyên dương");
+    let number = +prompt("Nhập số lượng số nguyên cần kiểm tra");
     let count = 0;
     for (let i = 2; i <= number; i++) {
         let check=true;
@@ -24,6 +23,11 @@
                 break;
             }
         }
+    }
+    if (count===20) {
+        document.write("<b>Đã đủ 20 số nguyên tố đầu tiên</b>");
+    } else {
+        document.write("<b>Chưa đủ số lượng yêu cầu, bạn cần nhập số lớn hơn</b>");
     }
 </script>
 </body>
