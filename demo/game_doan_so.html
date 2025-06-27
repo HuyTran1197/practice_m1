@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="gameplay()">Game Ready</button>
+</body>
+<script>
+  function gameplay() {
+    let min = +prompt("nhap so nho nhat");
+    let max = +prompt("nhap so lon nhat");
+    let result = min + Math.ceil(Math.random() * (max - min));
+    let guess;
+    let count=0;
+    while (count < 3) {
+      guess = +prompt("nhap so can doan");
+      if (guess === result) {
+        alert("ban da doan dung");
+        break;
+      } else if (guess > result) {
+        alert("so ban doan lon hon");
+      } else {
+        alert("so ban doan nho hon");
+      }
+      count++;
+    } if (count>3) {
+      alert("ban da het luot choi");
+    }
+  }
+</script>
+</html>

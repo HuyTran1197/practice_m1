@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<script>
+  let number = +prompt("nhập số nguyên dương bất kỳ");
+  let result = 1;
+  if (number === 0 || number === 1){
+      alert(result);
+  } else {
+      for (let i = 1; i <= number; i++) {
+          result *= i;
+      }
+  } if (number>1){
+      alert(result);
+  }
+</script>
+</body>
+</html>

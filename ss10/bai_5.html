@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiền lãi ngân hàng</title>
+</head>
+<body>
+<h1>Giả sử một ngân hàng tính lãi suất vay trong 12 tháng là 12%/năm:</h1>
+</body>
+<script>
+    let khoanVay = parseInt(prompt("nhập khoản vay"));
+    let laiVay = 0.12/12;
+    let gocMoiThang = khoanVay/12;
+    let tongLai;
+    let tongNop = gocMoiThang;
+    let gocConLai = khoanVay;
+    let soThang=1;
+    document.write('<b>tổng nộp mỗi tháng là</b>:<br>');
+    while(soThang<=12){
+        if(soThang===1){
+            tongLai=khoanVay*laiVay;
+            tongNop=gocMoiThang+tongLai;
+            document.write(`tháng ${soThang}: lãi là: ${Math.ceil(tongLai)}: tổng nộp: ${Math.ceil(tongNop)}<br>`);
+        } else {
+            gocConLai -= gocMoiThang;
+            tongLai = gocConLai * laiVay;
+            tongNop = gocMoiThang + tongLai;
+            document.write(`tháng ${soThang}: lãi là: ${Math.ceil(tongLai)}: tổng nộp: ${Math.ceil(tongNop)}<br>`);
+        }
+        soThang++;
+    }
+</script>
+</html>
