@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng.
+  let n = +prompt("Nhập số lượng phần tử mảng");
+  let numbers = new Array(n);
+  document.write("Mảng trước khi đảo:</br>");
+  for (let i = 0; i < numbers.length; i++) {
+    numbers[i] = +prompt(`Nhập phần tử thứ ${i}`);
+    document.write(`${numbers[i]}</br>`);
+  }
+  document.write("Mảng sau khi đảo:</br>");
+  for (let i = numbers.length-1; i >= 0; i--) {
+    document.write(`${numbers[i]}</br>`);
+  }
+</script>
+</body>
+</html>

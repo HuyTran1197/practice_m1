@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // in mảng gồm 10 pt, Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+    let numbers = new Array(10);
+    let count=0;
+    document.write("<b>Các phần tử trong mảng</b>:</br>");
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = +prompt(`Nhập phần tử thứ ${i+1}`);
+        if (numbers[i]>=10) {
+            count++;
+        }
+        document.write(`${numbers[i]}</br>`);
+    }
+    document.write(`Số lượng phần tử lớn hơn hoặc bằng 10 là: ${count}`);
+</script>
+</body>
+</html>

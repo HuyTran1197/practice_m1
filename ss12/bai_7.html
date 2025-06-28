@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Nếu V thuộc mảng, xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng).
+  let n = +prompt("Nhập số lượng phần tử mảng");
+  let stringS = new Array(n);
+  for (let i = 0; i < stringS.length; i++) {
+    stringS[i] = prompt(`Nhập phần tử thứ ${i}`);
+    document.write(`${stringS[i]}</br>`);
+  }
+  let check =1;
+  for (let i = 0; i < stringS.length; i++) {
+    if (stringS[i]==="v"){
+      check = stringS[i];
+    }
+  }
+  for (let i = stringS.indexOf(check); i < stringS.length-1; i++) {
+    stringS[i] = stringS[i+1];
+  }
+  stringS.length--;
+  stringS.push(0);
+  document.write("Mảng sau khi chuyển đổi:</br>");
+  for (let i = 0; i < stringS.length; i++) {
+    document.write(`${stringS[i]}</br>`);
+  }
+</script>
+</body>
+</html>

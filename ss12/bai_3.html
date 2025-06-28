@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập số lượng phần tử");
+  let numbers = new Array(n);
+  for (let i = 0; i < numbers.length; i++) {
+    numbers[i] = +prompt(`Nhập phần tử thứ ${i}`);
+  }
+  let sum = 0;
+  let max = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (max < numbers[i]) {
+      max = numbers[i];
+    }
+    sum += numbers[i];
+  }
+  document.write(`Max là: ${max} </br> Giá trị trung bình là: ${sum/numbers.length}`);
+</script>
+</body>
+</html>

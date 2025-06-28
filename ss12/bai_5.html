@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập số lượng phần tử");
+  let strings = new Array(n);
+  for (let i = 0; i < strings.length; i++) {
+    strings[i] = parseInt(prompt(`Nhập phần tử thứ ${i}`));
+  }
+  document.write("Các số nguyên âm trong chuỗi: </br>");
+  for (let i = 0; i < strings.length; i++) {
+    if (strings[i]<0) {
+      document.write(`${strings[i]}</br>`);
+    }
+  }
+</script>
+</body>
+</html>
