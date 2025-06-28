@@ -6,16 +6,16 @@
 </head>
 <body>
 <script>
-  let n = +prompt("nhập số nguyên");
+  let number = +prompt("nhập số nguyên");
   let x1 = 1;
   let x2 = 0;
-  let xn;
-  for ( let i = 0; i < n; i++ ) {
-    xn = x1 + x2;
+  let result;
+  for ( let i = 0; i < number; i++ ) {
+    result = x1 + x2;
     x1 = x2;
-    x2 = xn;
-    if (xn%5===0) {
-      document.write(`${xn} là số Fibonacci hợp lệ`);
+    x2 = result;
+    if (result%5===0) {
+      document.write(`${result} là số Fibonacci hợp lệ`);
       break;
     }
   }
