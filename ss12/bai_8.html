@@ -6,13 +6,25 @@
 </head>
 <body>
 <script>
-  let numbers = new Array(5);
-  document.write("Mảng trước khi chuyển đổi:</br>");
-  for (let i = 0; i < numbers.length; i++) {
-    numbers[i] = +prompt(`Nhập phần tử thứ ${i}:`);
-    document.write(`${numbers[i]}</br>`);
-  }
-  document.write("Mảng sau khi chuyển đổi:</br>");
+    let n = +prompt("Nhập số lượng phần tử");
+    let numbers = new Array(n);
+    document.write("Mảng trước khi chuyển đổi:</br>");
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = +prompt(`Nhập phần tử thứ ${i}:`);
+    }
+    document.write(`${numbers} </br>`);
+    document.write("Mảng sau khi chuyển đổi:</br>");
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i; j < numbers.length; j++) {
+            if(numbers[i]<numbers[j]){
+                let change = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = change;
+            }
+
+        }
+    }
+    document.write(numbers);
 </script>
 </body>
 </html>
