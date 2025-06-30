@@ -24,7 +24,11 @@
 
         }
     }
-    document.write(numbers);
+    document.write(`${numbers}</br>`);
+    let decreasing = [9,1,5,15,10];
+    document.write(`<b>Cách 2</b>:<br>Mảng trước khi giảm:</br>${decreasing}`);
+    decreasing.sort((a, b) => b - a);
+    document.write(`<br>Mảng sau khi giảm:</br>${decreasing}`);
 </script>
 </body>
 </html>
