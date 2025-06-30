@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let rowA = 2;
+    let colA = 5;
+    let boardA = [];
+    for (let i = 0; i < rowA; i++) {
+        boardA[i] = [];
+        for (let j = 0; j < colA; j++) {
+            boardA[i][j] = prompt(`Nhập phần tử ${[i]}${[j]}`);
+            // document.write(`${boardA[i][j]}&ensp;`);
+        }
+        // document.write("</br>");
+    }
+    let rowB = 2;
+    let colB = 5;
+    let boardB = [];
+    for (let i = 0; i < rowB; i++) {
+        boardB[i] = [];
+        for (let j = 0; j < colB; j++) {
+            boardB[i][j] = prompt(`Nhập phần tử ${[i]}${[j]}`);
+            // document.write(`${boardB[i][j]}&ensp;`);
+        }
+        // document.write("</br>");
+    }
+    let boardC = [];
+    for (let i = 0; i < boardA.length; i++) {
+        boardC[i] = boardA[i];
+        document.write(boardC[i]);
+        document.write("</br>");
+    }
+    for (let j = 0; j < boardB.length; j++) {
+        boardC[j] = boardB[j];
+        document.write(boardC[j]);
+        document.write("</br>");
+    }
+    // Cách 2:
+    // let boardC = boardA.concat(boardB);
+    // console.log(boardC);
+</script>
+</body>
+</html>

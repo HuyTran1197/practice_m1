@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.write("<b>Bài 1</b>:</br>");
+    let myColor = ["Green", "Blue", "White", "Black"];
+    document.write(`"${myColor}"</br>`);
+    document.write(myColor.join(' '));
+    document.write("<br><b>Bài 2</b>:</br>");
+    let n1 = +prompt("Số lượng phần tử mảng");
+    let numberString = [];
+    for (let i = 0; i < n1; i++) {
+        numberString[i] = prompt(`Nhập chuỗi số thứ ${i}`);
+    }
+    for (let i = 0; i < numberString.length; i++) {
+        if (numberString[i]%2===0 && numberString[i+1]%2===0){
+            numberString.splice(i+1,0,"-");
+        }
+    } document.write(`${numberString.join("")}`);
+    document.write("<br><b>Bài 3</b>:</br>");
+    let n2 =+prompt("Nhập số lượng phần tử mảng");
+    let stringS = [];
+    for (let i = 0; i < n2; i++) {
+        stringS[i]=prompt(`Nhập ${i}`);
+    }
+    let upper="QWERTYUIOPLKJHGFDSAZXCVBNM";
+    let lower="qwertyuioplkjhgfdsazxcvbnm";
+    let result=[];
+    for (let i = 0; i < stringS.length; i++) {
+        if (upper.indexOf(stringS[i])!==-1){
+            result.push(stringS[i].toLowerCase());
+        } else if (lower.indexOf(stringS[i])!==-1){
+            result.push(stringS[i].toUpperCase());
+        } else {
+            result.push(stringS[i]);
+        }
+    }
+    document.write(`${result.join(" ")}`);
+</script>
+</body>
+</html>

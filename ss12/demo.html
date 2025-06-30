@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n2 =+prompt("Nhập số lượng phần tử mảng");
+    let stringS = [];
+    for (let i = 0; i < n2; i++) {
+        stringS[i]=prompt(`Nhập ${i}`);
+    }
+    let upper="QWERTYUIOPLKJHGFDSAZXCVBNM";
+    let lower="qwertyuioplkjhgfdsazxcvbnm";
+    let result=[];
+    for (let i = 0; i < stringS.length; i++) {
+        if (upper.indexOf(stringS[i])!==-1){
+            result.push(stringS[i].toLowerCase());
+        } else if (lower.indexOf(stringS[i])!==-1){
+            result.push(stringS[i].toUpperCase());
+        } else {
+            result.push(stringS[i]);
+        }
+    }
+    document.write(`${result.join(" ")}`);
+</script>
+</body>
+</html>
