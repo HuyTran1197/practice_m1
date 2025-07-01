@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n = +prompt("Nhập kích thuớc mảng");
+  let array = [];
+  for (let i = 0; i < n; i++) {
+    array[i] = prompt(`Nhập phần tử thứ ${i}`);
+  }
+  for (let i = 0; i < array.length; i++) {
+    if(array[i]==="-"){
+      array[i] = "_";
+    }
+  }
+  document.write(array.join(' '));
+</script>
+</body>
+</html>

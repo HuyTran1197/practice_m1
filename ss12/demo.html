@@ -6,24 +6,96 @@
 </head>
 <body>
 <script>
-    let n2 =+prompt("Nhập số lượng phần tử mảng");
-    let stringS = [];
-    for (let i = 0; i < n2; i++) {
-        stringS[i]=prompt(`Nhập ${i}`);
-    }
-    let upper="QWERTYUIOPLKJHGFDSAZXCVBNM";
-    let lower="qwertyuioplkjhgfdsazxcvbnm";
-    let result=[];
-    for (let i = 0; i < stringS.length; i++) {
-        if (upper.indexOf(stringS[i])!==-1){
-            result.push(stringS[i].toLowerCase());
-        } else if (lower.indexOf(stringS[i])!==-1){
-            result.push(stringS[i].toUpperCase());
-        } else {
-            result.push(stringS[i]);
+    // let n =+prompt();
+    // let arrs = [2,3,7,4,5];
+    // // // for (let i = 0; i < n; i++) {
+    // // //     arr[i] = prompt(`${i}`);
+    // // // }
+    // let v = +prompt();
+    // for (let i = 0; i < arrs.length; i++) {
+    //     if (arrs[i] === v) {
+    //         for (let j = 0; j < arrs.length-1; j++) {
+    //             arrs[j] = arrs[j+1];
+    //         }
+    //     }
+    //     arrs[arrs.length-1]=0;
+    //     --i;
+    // }
+    // alert(arrs);
+    // let kytu = ["a","4","f","-"];
+    // for (let i = 0; i < kytu.length; i++) {
+    //     if (kytu[i]==="-"){
+    //         kytu[i]='B';
+    //     }
+    // }
+    // alert(kytu);
+    // một method làm việc với mảng
+    // unshift, shift, push, pop, splice(index, số lượng, phần tử cần thay doi);
+    // hàm sort sắp xếp:
+    // " name.sort(function(a,b){
+    //     return a-b; hoặc return b-a;
+    // });
+    // name.sort(a,b)=>a-b); "
+    // (*) mảng 2 chiều: là mảng 1 chiều mà các phần tử bên trong là mảng 1 chiều.
+    // let mang2chieu = [
+    //     [1,2,3],
+    //     [4,5,6]
+    // ];
+    let array = [
+        [1,2,3],
+        [4,5,6],
+        [5,7,9]
+    ];
+    let sum=0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            if (isPrime(array[i][j])){
+                sum+=array[i][j];
+            }
         }
     }
-    document.write(`${result.join(" ")}`);
+    alert(sum);
+    function isPrime(number) {
+        if (number<2){
+            return false;
+        }
+        for (let i = 2; i < number; i++) {
+            if (number%i===0){
+                return false;
+            }
+        }
+        return true;
+    }
+    // let check=isPrime(8);
+    // alert(check);
+    // let sum1=0;
+    // let sum2=0;
+    // // j = array.length - i;
+    // for (let i = 0; i < array.length; i++) {
+    //     for (let j = 0; j < array[i].length; j++) {
+    //         if (i===j){
+    //             sum1+=array[i][j];
+    //         }
+    //     }
+    // }
+    // alert(sum1);
+    // // i=0; j=2;
+    // // i=1;j=1;
+    // // i=2;j=0
+    // for (let i = 0; i < array.length; i++) {
+    //     for (let j = 0; j < array[i].length; j++) {
+    //         if (j===array.length-1-i){
+    //             sum2+=array[i][j];
+    //         }
+    //     }
+    // }
+    // alert(sum2);
+    // for (let i = 0; i < array.length; i++) {
+    //     for (let j = 0; j < array[i].length; j++) {
+    //         document.write(array[i][j]);
+    //     }
+    //     document.write("</br>");
+    // }
 </script>
 </body>
 </html>

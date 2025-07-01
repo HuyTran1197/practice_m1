@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n =+prompt("Nhập số lượng phần tử mảng");
+  let kytu = [];
+  for (let i = 0; i < n; i++) {
+    kytu[i] = prompt(`Nhập ký tự thứ ${i}`);
+  }
+  // Đếm số ký tự số (0-9) trong mảng.
+  let count=0;
+  for (let i = 0; i < kytu.length; i++) {
+    if (+kytu[i]===+kytu[i]){
+      count++;
+    }
+  }
+  alert(count);
+  // document.write(kytu.join(' '));
+</script>
+</body>
+</html>

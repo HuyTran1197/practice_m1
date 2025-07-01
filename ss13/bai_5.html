@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt();
+    let array1 = [];
+    let array2 = [];
+    for (let i = 0; i < n; i++) {
+        array1[i] = prompt(`Nhập phần tử mảng 1 thứ ${i}`);
+    }
+    for (let i = 0; i < n; i++) {
+        array2[i] = prompt(`Nhập phần tử mảng 2 thứ ${i}`);
+    }
+    let check=true;
+    for (let i = 0; i < n; i++) {
+        if (array1[i]!==array2[i]){
+            check=false;
+        }
+    }
+    if (check){
+        document.write("2 mảng chuỗi giống nhau");
+    } else {
+        document.write("2 mảng chuỗi khác nhau");
+    }
+</script>
+</body>
+</html>
