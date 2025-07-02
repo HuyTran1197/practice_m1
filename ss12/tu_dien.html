@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .table{
+      margin-left: 600px;
+      margin-top: 100px;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+<table border="1" class="table">
+  <tr>
+    <th colspan="2">
+      Eng-Viet
+    </th>
+  </tr>
+  <tr>
+    <td style="width: 100px">
+      <input id="vocabulary" type="text" placeholder="Enter a word"/>
+    </td>
+    <td style="width: 100px;text-align: center">
+      <button type="submit" onclick="dictionary()">Lookup</button>
+    </td>
+  </tr>
+</table>
+<p id="result" style="text-align: center"></p>
+</body>
+<script>
+  // for (let i = 0; i < n; i++) {
+  //     eng[i] = prompt(`Nhập từ tiếng Anh thứ ${i}`);
+  // }
+  // for (let i = 0; i < n; i++) {
+  //     viet[i] = prompt(`Nhập từ tiếng Việt thứ ${i}`);
+  // }
+  // tim vi tri từ tiếng anh mảng 1
+  // hiển thị tu TV tương ứng; else "k tìm thấy";
+  const viet = ["Xin chào","Cảm ơn","Yêu","Học sinh","Công ty","Thành phố","Trường học","Bóng đá","Thành công","Quyết định"];
+  const eng = ["Hello","Thanks","Love","Student","Company","City","School","Football","Success","Dicision"];
+  function dictionary() {
+    let find = document.getElementById('vocabulary').value;
+    let check=false;
+    for (let i = 0; i < eng.length; i++) {
+      if (eng[i]===find){
+        check=true;
+        document.getElementById('result').innerHTML = `<b>${viet[i]}</b>`;
+        break;
+      }
+    }
+    if(!check){
+      document.getElementById('result').innerHTML = "<b>Không tìm thấy</b>";
+    }
+  }
+</script>
+</html>
