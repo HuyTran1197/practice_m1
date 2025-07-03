@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Nếu tìm thấy ngôi sao, hiển thị tên chòm sao trên màn hình.
+  // Nếu không tìm thấy, xử lý và hiển thị thông báo phù hợp.
+  let starS = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+  let nameOfStar = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+  // Trong hàm, duyệt qua mảng đầu tiên để tìm tên ngôi sao. Nếu tìm thấy, trả lại tên chòm sao tương ứng từ mảng thứ hai.
+  let findStar = prompt("Enter the name of a star");
+  lookup(findStar, starS, nameOfStar);
+  function lookup(name, starList, nameList) {
+    for (let i = 0; i < starList.length; i++) {
+      if (starList[i].toLowerCase()===name.toLowerCase()){
+        alert(`The name of star is: ${nameList[i]}`);
+        return;
+      }
+    }
+    alert("Star is not found");
+  }
+</script>
+</body>
+</html>

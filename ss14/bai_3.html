@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number1 = +prompt("Enter first number");
+    let number2 = +prompt("Enter second number");
+    // showCompare(number1,number2);
+    if (number1<=number2){
+        let sum = showCompare(number1,number2);
+        alert(sum);
+    } else {
+        alert(showCompare(number1,number2));
+    }
+    function showCompare(a, b) {
+        if (a<=b){
+            return a+b;
+        } else {
+            return a;
+        }
+    }
+</script>
+</body>
+</html>
