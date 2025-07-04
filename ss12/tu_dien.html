@@ -23,7 +23,7 @@
       <input id="vocabulary" type="text" placeholder="Enter a word"/>
     </td>
     <td style="width: 100px;text-align: center">
-      <button type="submit" onclick="dictionary()">Lookup</button>
+      <button type="submit" onclick="toTranslate()">Lookup</button>
     </td>
   </tr>
 </table>
@@ -40,7 +40,7 @@
   // hiển thị tu TV tương ứng; else "k tìm thấy";
   const VIET = ["Xin chào","Cảm ơn","Yêu","Học sinh","Công ty","Thành phố","Trường học","Bóng đá","Thành công","Quyết định"];
   const ENG = ["Hello","Thanks","Love","Student","Company","City","School","Football","Success","Dicision"];
-  function dictionary() {
+  function toTranslate() {
     let find = document.getElementById('vocabulary').value;
     let check=false;
     for (let i = 0; i < ENG.length; i++) {
