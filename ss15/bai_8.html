@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let number = +prompt();
+  reverseNumber(number);
+  function reverseNumber(n) {
+    let array = [];
+    for (let i = 0; i < n; i++) {
+      array[i] = +prompt(`Enter element i${i}`);
+    }
+    for (let i = array.length-1; i >=0 ; i--) {
+      document.write(`Element i${i}: ${array[i]}<br>`);
+    }
+  }
+</script>
+</body>
+</html>

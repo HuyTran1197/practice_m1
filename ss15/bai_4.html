@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số hay không.
+  // Nếu là ký tự số, hàm trả về true; ngược lại trả về false.
+  let char = prompt("Enter a character");
+  if (checkCharacter(char)){
+    alert(`${char} is character number`);
+  } else {
+    alert(`${char} isn't character number`)
+  }
+  function checkCharacter(char) {
+    return char >= '0' && char <= '9';
+  }
+</script>
+</body>
+</html>
