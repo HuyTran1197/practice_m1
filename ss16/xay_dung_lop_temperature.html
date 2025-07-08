@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Temperature {
+    temperatureC;
+    constructor(celsius) {
+      this.temperatureC = celsius;
+    }
+    convert(){
+      let fahrenheit = this.temperatureC * 1.8 + 32;
+      let kelvin = this.temperatureC + 273.15;
+      document.write(`Convert from C to F = ${fahrenheit} <br> Convert from C to K = ${kelvin}`);
+    }
+    // setCelsius(celsius){
+    //   this.temperatureC = celsius;
+    // }
+  }
+  let result = new Temperature(25);
+  result.convert();
+</script>
+</body>
+</html>

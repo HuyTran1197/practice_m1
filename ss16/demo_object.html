@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let student1 = {
+        id: 1,
+        name: "Hạo",
+        age: 28,
+        address: "Phú Lộc 1",
+        call: function(subject){
+            console.log(`Sinh viên ${this.name} đang học môn ${subject}`);
+        }
+    }
+    student1.call("JAVA");
+    class StudentCodegym {
+        id;
+        name;
+        address;
+        // làm một method (function) đặc biệt để khởi tạo một đối tượng.
+        constructor(id, name, address) {
+            this.id = id;
+            this.name = name;
+            this.address = address;
+        }
+        call(subject){
+            console.log(`Sinh viên ${this.name}, id là: ${this.id}, địa chỉ: ${this.address} đang học môn ${subject}`);
+        }
+    }
+    let student = new StudentCodegym(1, "Hao", "Phu Loc");
+    student.call("JAVA");
+    // su dung function tao class
+    let studentX = function (id, name, address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.study = function (subject) {
+            console.log(`Sinh viên ${this.name}, id là: ${this.id}, địa chỉ: ${this.address} đang học môn ${subject}`);
+        }
+    }
+    let man = new studentX(3, "Hao", "2/9");
+    man.study("JavaScript");
+</script>
+</body>
+</html>
