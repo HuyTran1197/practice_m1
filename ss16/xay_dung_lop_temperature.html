@@ -11,10 +11,15 @@
     constructor(celsius) {
       this.temperatureC = celsius;
     }
+    getFahrenheit(){
+        return this.temperatureC * 1.8 + 32;
+    }
+    getKelvin(){
+        return this.temperatureC + 273.15;
+    }
     convert(){
-      let fahrenheit = this.temperatureC * 1.8 + 32;
-      let kelvin = this.temperatureC + 273.15;
-      document.write(`Convert from C to F = ${fahrenheit} <br> Convert from C to K = ${kelvin}`);
+        console.log(`Convert from C to F = ${this.getFahrenheit()}`);
+        console.log(`Convert from C to K = ${this.getKelvin()}`);
     }
     // setCelsius(celsius){
     //   this.temperatureC = celsius;
