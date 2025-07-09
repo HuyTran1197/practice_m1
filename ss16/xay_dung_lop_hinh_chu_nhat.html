@@ -23,8 +23,10 @@
         console.log(`Acreage of rectangle = ${this.getAcreage()} cm2`);
         console.log(`Perimeter of rectangle = ${this.getPerimeter()} cm`);
     }
-    setLengthAndWidth(long, width){
+    setLength(long){
         this.length = long;
+    }
+    setWidth(width){
         this.width = width;
     }
   }
@@ -34,10 +36,10 @@
       alert("Programing Error");
   } else {
       let result = new Rectangle(length,width);
-      result.setLengthAndWidth(length,width);
-      let canvas = document.getElementById('myCanvas');
-      let draw = canvas.getContext('2d');
-      draw.strokeRect(0,0,length,width);
+      result.setLength(length);
+      result.setWidth(width);
+      let canvas = document.getElementById('myCanvas').getContext('2d');
+      canvas.strokeRect(0,0,length,width);
       result.showRectangle();
   }
 </script>
