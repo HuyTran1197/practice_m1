@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Đăng ký tài khoản</h2>
+<input id="name" placeholder="Enter your full name"/>
+<input id="email" placeholder="Enter your email"/>
+<input id="password" placeholder="Enter your password"/>
+<button onclick="registerForm()">Đăng ký</button>
+<script>
+  // Phần 1:
+  // câu 1: C
+  // câu 2: B
+  // câu 3: B
+  // câu 4: C
+  // câu 5: D
+
+  // Phần 2:
+  // câu 1:
+  // function isEven(n) {
+  //   if (n%2!==0){
+  //     return console.log(`Đây là số lẻ`);
+  //   }
+  //   return console.log(`Đây là số chẵn`);
+  // }
+  // let number = +prompt("Nhập số");
+  // isEven(number);
+
+  // câu 2:
+  // function sum(n) {
+  //   let array = [];
+  //   for (let i = 0; i < n; i++) {
+  //     array[i] = +prompt(`phần tử thứ ${i}`);
+  //   }
+  //   let sum = 0;
+  //   for (let i = 0; i < array.length; i++) {
+  //     sum += array[i];
+  //   }
+  //   return alert(sum);
+  // }
+  // let number = 8;
+  // sum(number);
+
+  // câu 3:
+  // function reverseNumber(n) {
+  //   let result = 0;
+  //   while (n > 0) {
+  //     let digit = n % 10;
+  //     result = result * 10 + digit;
+  //     n = Math.floor(n/10);
+  //   }
+  //   return result;
+  // }
+  // let number = 12345;
+  // alert(number);
+  // alert(reverseNumber(number));
+
+  // Phần 3:
+  class Form {
+    constructor(name, email, password) {
+      this.name = name;
+      this.email = email;
+      this.password = password;
+    }
+    setName(name){
+      if (!isNaN(name.trim())){
+        return false;
+      }
+      this.name = name;
+      return true;
+    }
+    setEmail(mail){
+      if (!mail.includes('@')){
+        return false;
+      }
+      this.email = mail;
+      return true;
+    }
+    setPassWord(pass){
+      if (pass.length < 6 ){
+        return false;
+      }
+      this.password = pass;
+      return true;
+    }
+  }
+  function registerForm() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let resultForm = new Form(name,email,password);
+    let resultName = resultForm.setName(name);
+    let resultEmail = resultForm.setEmail(email);
+    let resultPassWord = resultForm.setPassWord(password);
+    if (resultName && resultEmail && resultPassWord){
+      alert('đăng kí thành công');
+    } else {
+      alert('...');
+    }
+  }
+  // Khi người dùng bấm nút "Đăng ký", kiểm tra:
+  // Họ tên không được để trống
+  // Email phải chứa ký tự @
+  // Nếu hợp lệ: hiển thị alert("Đăng ký thành công!")
+  // Nếu không hợp lệ: hiển thị lỗi tương ứng bằng alert(...)
+</script>
+</body>
+</html>

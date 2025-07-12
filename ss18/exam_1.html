@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkEvenOdd(array) {
+        let checkEven = false;
+        let checkOdd = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i]%2===0){
+                checkEven = true;
+            } else {
+                checkOdd = true;
+            }
+            if (checkEven && checkOdd){
+                return -1;
+            }
+        }
+        if (checkEven){
+            return 1;
+        }
+        if (checkOdd){
+            return 0;
+        }
+    }
+    let array = [1,3,9];
+    console.log(checkEvenOdd(array));
+    // let array = [1,2,9,4];
+    // let result1 = findEven(array);
+    // let result2 = findOdd(array);
+    // if (result1===1){
+    //     alert(result1);
+    // } else if (result2===0){
+    //     alert(result2);
+    // } else {
+    //     alert("-1");
+    // }
+</script>
+</body>
+</html>

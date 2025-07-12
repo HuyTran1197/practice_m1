@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkCharacter(char) {
+        let checkNumber = false;
+        let checkChar = false;
+        for (let i = 0; i < char.length; i++) {
+            if (char[i] >= '0' && char[i] <= '9'){
+                checkNumber = true;
+            } else {
+                checkChar = true;
+            } if (checkNumber && checkChar){
+                return -1;
+            }
+        }
+        if (checkNumber){
+            return 1;
+        } if (checkChar){
+            return 0;
+        }
+    }
+    let array = [5,'b','a',1];
+    alert(checkCharacter(array));
+</script>
+</body>
+</html>
