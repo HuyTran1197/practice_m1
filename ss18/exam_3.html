@@ -25,8 +25,13 @@
         }
         return true;
     }
-    let array = [11,3,2,7];
-    alert(checkPrime(array));
+    let number = +prompt("enter the number");
+    let array = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt(`enter number ${i}`);
+    }
+    let result = checkPrime(array);
+    console.log(result);
 </script>
 </body>
 </html>

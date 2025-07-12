@@ -24,8 +24,13 @@
             return 0;
         }
     }
-    let array = [5,'b','a',1];
-    alert(checkCharacter(array));
+    let number = +prompt("enter the number");
+    let array = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt(`enter number ${i}`);
+    }
+    let result = checkCharacter(array);
+    console.log(result);
 </script>
 </body>
 </html>
