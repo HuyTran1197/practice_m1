@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt('enter quantity');
+    let array = [];
+    for (let i = 0; i < number; i++) {
+        array[i] = +prompt(`enter number ${i}`);
+    }
+    for (let i = 0; i < array.length; i++) {
+        var check = true;
+        if (array[i] === array[array.length-1-i]){
+            check = true;
+        } else {
+            check = false;
+            break;
+        }
+    }
+    if (check) {
+        console.log("OK");
+    } else {
+        console.log("NO");
+    }
+</script>
+</body>
+</html>
