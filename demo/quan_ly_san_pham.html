@@ -1,10 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Product Manager</h2>
+<input id="name" placeholder="enter name of product"/>
+<input id="price" placeholder="enter price"/>
+<input id="quantity" placeholder="enter quantity"/>
+<button onclick="addNewOfProduct()">Add new product</button>
+<p id="display"></p>
 </body>
+<script>
+  class Product{
+    constructor(name, prices, quantity) {
+      this.name = name;
+      this.prices = prices;
+      this.quantity = quantity;
+    }
+    setPrices(prices){
+      if (isNaN(prices) || prices <= 0){
+        return false;
+      }
+      this.prices = prices;
+      return true;
+    }
+    setQuantity(quantity){
+      if (isNaN(quantity) || quantity <= 0){
+        return false;
+      }
+      this.quantity = quantity;
+      return true;
+    }
+    setName(name){
+      if (!isNaN(name.trim())){
+        return false;
+      }
+      this.name = name;
+      return true;
+    }
+  }
+  let product1 = new Product('iphone',500,2);
+  let product2 = new Product('samsung',200,1);
+  let product3 = new Product('nokia',50,3);
+  let newProduct = [product1,product2,product3];
+  showList(newProduct);
+  function addNewOfProduct() {
+    let name = document.getElementById('name').value;
+    let price = +document.getElementById('price').value;
+    let quantity = +document.getElementById('quantity').value;
+    if (!isNaN(name.trim()) || isNaN(price) || price<=0 || isNaN(quantity) || quantity<=0){
+      alert("please fill in all input");
+      return;
+    }
+    for (let i = 0; i < newProduct.length; i++) {
+      if (newProduct[i].name === name) {
+        alert("You have entered the same name, please enter name again");
+        document.getElementById('name').value = "";
+        return;
+      }
+    }
+    let newProductForm = new Product(name, price, quantity);
+    newProduct.push(newProductForm);
+    document.getElementById('name').value = "";
+    document.getElementById('price').value = "";
+    document.getElementById('quantity').value = "";
+    showList(newProduct);
+  }
+  function editProduct(index) {
+    let updatePrice = +prompt('enter new price');
+    let updateQuantity = +prompt('enter new quantity');
+    let updateName = prompt('enter new name', newProduct[index].name);
+    let newName = newProduct[index].setName(updateName);
+    let newPrice = newProduct[index].setPrices(updatePrice);
+    let newQuantity = newProduct[index].setQuantity(updateQuantity);
+    if (newName && newPrice && newQuantity){
+      newProduct[index].name = updateName;
+      newProduct[index].prices = updatePrice;
+      newProduct[index].quantity = updateQuantity;
+      showList(newProduct);
+    }
+  }
+  function deleteProduct(index) {
+    let conf = confirm(`Do you want to delete product ${newProduct[index].name} ?`);
+    if (conf){
+      newProduct.splice(index,1);
+    }
+    showList(newProduct);
+  }
+  function showList(list) {
+    let tableSting = `<table border="1" style="border-collapse: collapse">
+                          <tr>
+                             <th>No</th>
+                             <th>Name</th>
+                             <th>Price</th>
+                             <th>Quantity</th>
+                             <th>Edit</th>
+                             <th>Delete</th>
+                          </tr>`
+    for (let i = 0; i < list.length; i++) {
+      tableSting += `<tr>
+                           <td>${i+1}</td>
+                           <td>${list[i].name}</td>
+                           <td>${list[i].prices}</td>
+                           <td>${list[i].quantity}</td>
+                           <td><button onclick="editProduct(${i})">Edit</button></td>
+                           <td><button onclick="deleteProduct(${i})">Delete</button></td>
+                     </tr>`
+    }
+    tableSting += `</table>`
+    document.getElementById('display').innerHTML = tableSting;
+  }
+</script>
 </html>

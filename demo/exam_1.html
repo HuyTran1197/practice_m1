@@ -5,29 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-</body>
 <script>
-  function checkEvenOdd(array) {
-    let checkEven = false;
-    let checkOdd = false;
+    let array = [1,1,2,2,1];
     for (let i = 0; i < array.length; i++) {
-      if (array[i] % 2 === 0) {
-        checkEven = true;
-      } else {
-        checkOdd = true;
-      }
+        var check = true;
+        if (array[i] === array[array.length-1-i]){
+            check = true;
+        } else {
+            check = false;
+            break;
+        }
     }
-    if (checkEven && checkOdd){
-      return -1;
+    if (check){
+        alert('YES');
+    } else {
+        alert('NO');
     }
-    return checkEven ? 1 : 0;
-  }
-  let n = +prompt("enter quantity");
-  let array = [];
-  for (let i = 0; i < n; i++) {
-    array[i] = +prompt(`enter number ${i}`);
-  }
-  let result = checkEvenOdd(array);
-  alert(result);
+    // i=0 === i=4
+    // i=1 === i=3
+    // a[i] === a[a.length-1-i] => a[1] === a[5-1-1=3] => a[2] === a[7-1-2 = 4]
 </script>
+</body>
 </html>
