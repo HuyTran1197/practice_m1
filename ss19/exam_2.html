@@ -13,9 +13,13 @@
       let denominator = arrX[1];
       if (!isNaN(numerator) && !isNaN(denominator)){
         if (denominator!==0){
-          let resultNum = numerator/numerator;
-          let resultDeno = denominator/numerator;
-          return `${resultNum}/${resultDeno}`;
+          if (numerator >= denominator){
+              return numerator/denominator;
+          } else {
+              let resultNum = numerator/numerator;
+              let resultDeno = denominator/numerator;
+              return `${resultNum}/${resultDeno}`;
+          }
         } else {
           return "Not is fraction";
         }
