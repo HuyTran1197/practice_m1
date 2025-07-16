@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberCheck1 = 123;
+    let numberCheck2 = 7309;
+    let numberCheck3 = 2583;
+    console.log(findMaxNumber(numberCheck1));
+    console.log(findMaxNumber(numberCheck2));
+    console.log(findMaxNumber(numberCheck3));
+    function findMaxNumber(x) {
+        let stringX = String(x).split('');
+        let count = 0;
+        let i = 0;
+        while(i<stringX.length){
+            ++count;
+            i++;
+        }
+        if (count < 4){
+            return -1;
+        }
+        let max = stringX[0];
+        for (let j = 0; j < stringX.length; j++) {
+            let deleteNumber = stringX.splice(j,1);
+            let newArray = stringX.join('');
+            if (max < newArray) {
+                max = newArray;
+            }
+            stringX.splice(j,0,deleteNumber[0]);
+        }
+        return max;
+    }
+    // num = 5242; res = 0;
+    // j=0 => del=242; => del>res; => res=242; => del=5242;
+    // j=1; => del=542 => del>res; =>res=542; => del=5242;
+    // j=2; => del=522; => del<res; => res=542 => del=5242;
+    // j=3; => del=524 => del<res; => res=542 => del=5242;
+</script>
+</body>
+</html>
