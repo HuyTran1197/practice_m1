@@ -6,30 +6,46 @@
 </head>
 <body>
 <script>
-  function find(x) {
-    let arrX = x.split("/");
-    if (arrX.length === 2){
-      let numerator = arrX[0];
-      let denominator = arrX[1];
-      if (!isNaN(numerator) && !isNaN(denominator)){
-        if (denominator!==0){
-          if (numerator >= denominator){
-              return numerator/denominator;
-          } else {
-              let resultNum = numerator/numerator;
-              let resultDeno = denominator/numerator;
-              return `${resultNum}/${resultDeno}`;
-          }
+    function timUCLN (a,b) {
+        let uocChung = 1;
+        if (a<b){
+            for (let i = 0; i <= a; i++) {
+                if (a%i===0 && b%i===0){
+                    uocChung = i;
+                }
+            }
         } else {
-          return "Not is fraction";
+            for (let i = 0; i <= b; i++) {
+                if (a%i===0 && b%i===0){
+                    uocChung = i;
+                }
+            }
         }
-      }
-    } else {
-      return "Not is fraction";
+        return uocChung;
     }
-  }
-  let number = prompt();
-  alert(find(number));
+    function find(x) {
+        let arrX = x.split("/");
+        if (arrX.length === 2){
+            let numerator = arrX[0];
+            let denominator = arrX[1];
+            if (!isNaN(numerator) && !isNaN(denominator)){
+                if (denominator!==0){
+                    if (numerator%denominator===0){
+                        return `${numerator/denominator}`;
+                    } else {
+                        let uocChungLonNhat = timUCLN(numerator,denominator);
+                        return `${numerator/uocChungLonNhat}/${denominator/uocChungLonNhat}`;
+                    }
+                } else {
+                    return "Not is fraction";
+                }
+            }
+        } else {
+            return "Not is fraction";
+        }
+    }
+    let number = prompt();
+    alert(find(number));
 </script>
 </body>
 </html>
