@@ -6,12 +6,16 @@
 </head>
 <body>
 <script>
-    let number = +prompt('enter quantity');
+    let number;
     let array = [];
+    do {
+        number = +prompt('enter number');
+    } while(number<=0 || number>20 || isNaN(number) || number%1!==0);
     for (let i = 0; i < number; i++) {
         array[i] = +prompt(`enter number ${i}`);
     }
-    for (let i = 0; i < array.length; i++) {
+    alert(array);
+    for (let i = 0; i < array.length/2; i++) {
         var check = true;
         if (array[i] === array[array.length-1-i]){
             check = true;
