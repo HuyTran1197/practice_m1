@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = "CodeGym DaNang AAaaAA";
+    let arr2 = "hello";
+    console.log(checkString(arr1));
+    console.log(checkString(arr2));
+    function checkString(str) {
+        let newChar = [];
+        for (let i = 0; i < str.length; i++) {
+            let char = str[i];
+            if (char==="u" || char==="e" || char==="o" || char==="a" || char==="i" || char==="U" || char==="E" || char==="O" || char==="A" || char==="I"){
+                newChar += char;
+            }
+        }
+        let newArray = [];
+        let check = true;
+        for (let i = 0; i < newChar.length; i++) {
+            for (let j = 0; j < i; j++) {
+                if (newChar[i]===newChar[j]){
+                    check = false;
+                    break;
+                }
+            }
+            if (check){
+                newArray += newChar[i];
+            }
+        }
+        return newArray;
+    }
+
+    // function findX(arr) {
+    //   let upper = "UEOAI";
+    //   let lower = "ueoai";
+    //   let result = [];
+    //   let check = true;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     let char = arr[i];
+    //     if (char===upper[i]){
+    //       char = lower[i];
+    //       check = true;
+    //     }
+    //     check = false;
+    //   }
+    //   return result;
+    // }
+    // let num = "awsdQWAertET";
+    // alert(findX(num));
+</script>
+</body>
+</html>

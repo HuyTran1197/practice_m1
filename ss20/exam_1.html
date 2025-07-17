@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let n;
+  let array = [];
+  do {
+    n = +prompt('enter number');
+  } while(n<=0 || n>20 || isNaN(n) || n%1!==0 || n%2!==0);
+  for (let i = 0; i < n; i++) {
+    array[i] = +prompt(`enter number ${i}`);
+  }
+  console.log(array);
+  let check = true;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < array[i+1]){
+      check = true;
+      i++
+    } else {
+      check = false;
+      break;
+    }
+  }
+  if (check){
+    alert("OK");
+  } else {
+    alert("NO");
+  }
+  // a = [1,2,6,7,5,8];
+  // a[0]<a[i+1] => check = true;
+  // a[1]<a[]
+</script>
+</body>
+</html>
