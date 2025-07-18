@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addNewStudent()">Add New Student</button>
+<button onclick="editStudent()">Edit information of Student</button>
+<button onclick="deleteStudent()">Delete Student</button>
+<p id="display"></p>
+</body>
+<script>
+  class Students {
+    constructor(id, name, classroom, email, day, month, year, birthday, module) {
+      this.id = id;
+      this.name = name;
+      this.classroom = classroom;
+      this.email = email;
+      this.day = day;
+      this.month = month;
+      this.year = year;
+      this.birthday = birthday;
+      this.module = module;
+    }
+
+    setName(name) {
+      if (!isNaN(name.trim()) || (name >= '0' && name <= '9') || name.length > 50) {
+        return false;
+      }
+      this.name = name;
+      return true;
+    }
+
+    setDay(day) {
+      if (isNaN(day) || day < 0 || day > 31) {
+        return false;
+      }
+      this.day = day;
+      return true;
+    }
+
+    setMonth(month) {
+      if (isNaN(month) || month < 0 || month > 12) {
+        return false;
+      }
+      this.month = month;
+      return true;
+    }
+
+    setYear(year) {
+      if (isNaN(year) || year < 0) {
+        return false;
+      }
+      this.year = year;
+      return true;
+    }
+
+    setId(id) {
+      if (id.length < 4) {
+        return false;
+      }
+      this.id = id;
+      return true;
+    }
+
+    getId() {
+      return `HV-${this.id}`;
+    }
+
+    getDay() {
+      if (this.day < 10) {
+        return `${0}${this.day}`;
+      }
+      return this.day;
+    }
+
+    getMonth() {
+      if (this.month < 10) {
+        return `${0}${this.month}`;
+      }
+      return this.month;
+    }
+
+    getYear() {
+      if (this.year < 1000) {
+        return false;
+      }
+      return this.year;
+    }
+
+    toString() {
+      return `${this.getDay()}/${this.getMonth()}/${this.getYear()}`;
+    }
+  }
+
+  let student1 = new Students("0001", "Đinh Hùng Khang", "C1022G1", "dhk04@gmail.com", 10, 2, 1997);
+  let student2 = new Students("0002", "Trần Nguyễn Yên Nhi", "C1022G1", "tnyennhi@gmail.com", 5, 7, 2007);
+  let student3 = new Students("0003", "Trần Minh Hạo", "C1022G1", "traminhhao@gmail.com", 5, 11, 2000);
+  let newStudent = [student1, student2, student3];
+  showListStudent(newStudent);
+
+  function addNewStudent() {
+    let id = prompt('enter new id');
+    let name = prompt('enter new name');
+    let classRoom = prompt('enter new class');
+    let email = prompt('enter new email');
+    let day = +prompt('enter day');
+    let month = +prompt('enter month');
+    let year = +prompt('enter year');
+    let module = +prompt('enter module');
+    let addNewStudent = new Students(id, name, classRoom, email, day, month, year, module);
+    let addName = addNewStudent.setName(name);
+    let addNewID = addNewStudent.setId(id);
+    let addDay = addNewStudent.setDay(day);
+    let addMonth = addNewStudent.setMonth(month);
+    let addYear = addNewStudent.setYear(year);
+    for (let i = 0; i < newStudent.length; i++) {
+      if (newStudent[i].id === addNewID) {
+        alert('You have entered the same id. Please enter the different of the id to add new');
+        return;
+      }
+    }
+    if (!addName || module < 1 || module > 6 || !addNewID || email === "" || !addDay || !addMonth || !addYear || !toString()) {
+      alert("You have entered wrong format");
+      return;
+    }
+    newStudent.push(addNewStudent);
+    showListStudent(newStudent);
+  }
+
+  function editStudent() {
+    let findID = prompt('enter id need to change');
+    let check = true;
+    for (let i = 0; i < newStudent.length; i++) {
+      if (newStudent[i].id !== findID) {
+        check = false;
+      } else{
+        check = true;
+        let newID = prompt('enter new id');
+        let newName = prompt('enter new name');
+        let newDay = +prompt('enter new day');
+        let newMonth = +prompt('enter new month');
+        let newYear = +prompt('enter new year');
+        let updateName = newStudent[i].setName(newName);
+        let updateNewID = newStudent[i].setId(newID);
+        let updateDay = newStudent[i].setDay(newDay);
+        let updateMonth = newStudent[i].setMonth(newMonth);
+        let updateYear = newStudent[i].setYear(newYear);
+        if (updateName && updateNewID && updateDay && updateMonth && updateYear) {
+          newStudent[i].name = newName;
+          newStudent[i].id = newID;
+          newStudent[i].day = newDay;
+          newStudent[i].month = newMonth;
+          newStudent[i].year = newYear;
+          showListStudent(newStudent);
+        }
+      }
+      if (check) {
+        break;
+      }
+    }
+    if (!check){
+      alert("Not found the id");
+    }
+  }
+  function deleteStudent(index) {
+    let findID = prompt('enter id need to change');
+    let check = true;
+    for (let i = 0; i < newStudent.length; i++) {
+      if (newStudent[i].id !== findID) {
+        check = false;
+      } else {
+        check = true;
+        let conf = confirm(`Do you want to delete student ${newStudent[i].name}`);
+        if (conf){
+          newStudent.splice(i,1);
+        }
+      }
+      showListStudent(newStudent);
+      if (check){
+        break;
+      }
+    }
+    if (!check){
+      alert("Not found the id");
+    }
+  }
+  function showListStudent(list){
+    let tableString = `<table border="1" style="border-collapse: collapse">
+                        <tr>
+                           <th>Id</th>
+                           <th>Name</th>
+                           <th>Classroom</th>
+                           <th>Email</th>
+                           <th>Birthday</th>
+                        </tr>`
+    for (let i = 0; i < list.length; i++) {
+      tableString += `<tr>
+                           <td>${list[i].getId()}</td>
+                           <td>${list[i].name}</td>
+                           <td>${list[i].classroom}</td>
+                           <td>${list[i].email}</td>
+                           <td>${list[i].toString()}</td>
+                      </tr>`
+    }
+    tableString += `</table>`
+    document.getElementById('display').innerHTML = tableString;
+  }
+</script>
+</html>
