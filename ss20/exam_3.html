@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkTriangle(x,y,z) {
+        if (x<=0 || y<=0 || z<=0){
+            return 'x,y,z are not the 3 sides of a triangle';
+        } else {
+            if ((x*x+y*y===z*z) || (x*x+z*z===y*y) || (y*y+z*z===x*x)){
+                return 'x,y,z are the 3 sides of a right triangle';
+            } else if (x+y>z && x+z>y && y+z>x){
+                return 'x,y,z are the 3 sides of a triangle';
+            } else {
+                return 'x,y,z are not the 3 sides of a triangle';
+            }
+        }
+    }
+    let x = +prompt('enter side of a triangle');
+    let y = +prompt('enter side of a triangle');
+    let z = +prompt('enter side of a triangle');
+    console.log(checkTriangle(x,y,z));
+</script>
+</body>
+</html>
