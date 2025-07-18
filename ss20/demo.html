@@ -6,51 +6,76 @@
 </head>
 <body>
 <script>
-  let arr1 = "CodeGym DaNang AAaaAA";
-  let arr2 = "hello";
-  console.log(checkString(arr1));
-  console.log(checkString(arr2));
-  function checkString(str) {
-    let newChar = [];
-    for (let i = 0; i < str.length; i++) {
-      let char = str[i];
-      if (char==="u" || char==="e" || char==="o" || char==="a" || char==="i" || char==="U" || char==="E" || char==="O" || char==="A" || char==="I"){
-        newChar += char;
-      }
-    }
-    let newArray = [];
-    let check = true;
-    for (let i = 0; i < newChar.length; i++) {
-      for (let j = 0; j < i; j++) {
-        if (newChar[i]===newChar[j]){
-          check = false;
-          break;
-        }
-      }
-      if (check){
-        newArray += newChar[i];
-      }
-    }
-    return newArray;
-  }
+    // let arr1 = "CodeGym DaNang AAaaAA";
+    // let arr2 = "hello";
+    // console.log(checkString(arr1));
+    // console.log(checkString(arr2));
+    //
+    // function checkString(str) {
+    //     let newChar = [];
+    //     for (let i = 0; i < str.length; i++) {
+    //         let char = str[i];
+    //         if (char === "u" || char === "e" || char === "o" || char === "a" || char === "i" || char === "U" || char === "E" || char === "O" || char === "A" || char === "I") {
+    //             newChar += char;
+    //         }
+    //     }
+    //     let newArray = [];
+    //     let check = true;
+    //     for (let i = 0; i < newChar.length; i++) {
+    //         for (let j = 0; j < i; j++) {
+    //             if (newChar[i] === newChar[j]) {
+    //                 check = false;
+    //                 break;
+    //             }
+    //         }
+    //         if (check) {
+    //             newArray += newChar[i];
+    //         }
+    //     }
+    //     return newArray;
+    // }
 
-  // function findX(arr) {
-  //   let upper = "UEOAI";
-  //   let lower = "ueoai";
-  //   let result = [];
-  //   let check = true;
-  //   for (let i = 0; i < arr.length; i++) {
-  //     let char = arr[i];
-  //     if (char===upper[i]){
-  //       char = lower[i];
-  //       check = true;
-  //     }
-  //     check = false;
-  //   }
-  //   return result;
-  // }
-  // let num = "awsdQWAertET";
-  // alert(findX(num));
+    // function findX(arr) {
+    //   let upper = "UEOAI";
+    //   let lower = "ueoai";
+    //   let result = [];
+    //   let check = true;
+    //   for (let i = 0; i < arr.length; i++) {
+    //     let char = arr[i];
+    //     if (char===upper[i]){
+    //       char = lower[i];
+    //       check = true;
+    //     }
+    //     check = false;
+    //   }
+    //   return result;
+    // }
+    // let num = "awsdQWAertET";
+    // alert(findX(num));
+
+    // function checkTriangle(x,y,z) {
+    //     if (x<=0 || y<=0 || z<=0){
+    //         return 'x,y,z are not the 3 sides of a triangle';
+    //     } else {
+    //         if ((x*x+y*y===z*z) || (x*x+z*z===y*y) || (y*y+z*z===x*x)){
+    //             return 'x,y,z are the 3 sides of a right triangle';
+    //         } else if (x+y>z && x+z>y && y+z>x){
+    //             return 'x,y,z are the 3 sides of a triangle';
+    //         } else {
+    //             return 'x,y,z are not the 3 sides of a triangle';
+    //         }
+    //     }
+    // }
+    // let x = +prompt('enter side of a triangle');
+    // let y = +prompt('enter side of a triangle');
+    // let z = +prompt('enter side of a triangle');
+    // console.log(checkTriangle(x,y,z));
+    // x,y,z k vuông => tam giác thuờng;
+    // x,y,z vuông => vuông
+    // x,y,z k phải 3 cạnh của tam giác;
+    // 1,2,3 k phải; 1+2==3; 2+3>1; 1+3>2
+    // 3,4,5 vuông; 9+16=25; (a2+b2=c2) ||;
+    // 4,12,10 thuờng; 4+12>10; 12+10>4; 4+10>12; => (a+b>c) &&;
 </script>
 </body>
 </html>
