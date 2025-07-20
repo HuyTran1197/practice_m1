@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function findChar(char) {
+    let newChar = char.split(" ");
+    let findWords = [];
+    for (let i = 0; i < newChar.length; i++) {
+      if (newChar[i]!==" "){
+        findWords.push(newChar[i]);
+      }
+    }
+    if (findWords.length<2){
+      alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+    }
+    let result = "";
+    for (let i = 0; i < findWords.length; i++) {
+      result += findWords[i][0];
+    }
+   return result.toUpperCase();
+  }
+
+  let char = "sta rt";
+  alert(findChar(char));
+  // nếu có khoảng trắng, in từ viết tắt;
+  // nếu không, in NOT;
+</script>
+</body>
+</html>

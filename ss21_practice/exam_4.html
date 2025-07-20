@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>List Phone Number</h2>
+<p id="display"></p>
+</body>
+<script>
+  class PhoneNumber {
+    constructor(phoneNumber, name, address) {
+      this.phoneNumber = phoneNumber;
+      this.name = name;
+      this.address = address;
+    }
+  }
+  let list1 = new PhoneNumber("0903275298", "Nguyễn Đình Hy", "Phuước Lý");
+  let list2 = new PhoneNumber("0906375901", "Lê Hữu Nam", "Sơn Trà");
+  let list3 = new PhoneNumber("0905418557", "Hứa Minh Quang", "Hải Châu");
+  let newList = [list1, list2, list3];
+  showList(newList);
+  function deleteList(index) {
+    let conf = confirm(`Do you want to delete list of ${newList[index].name}?`);
+    if (conf){
+      newList.splice(index,1);
+      showList(newList);
+    }
+  }
+  function showList(list) {
+    let tableString = `<table border="1" style="border-collapse: collapse">
+                           <tr>
+                              <th>No</th>
+                              <th>Phone Number</th>
+                              <th>Name</th>
+                              <th>Address</th>
+                           </tr>`
+    for (let i = 0; i < list.length; i++) {
+      tableString += `<tr>
+                         <td>${i+1}</td>
+                         <td>${list[i].phoneNumber}</td>
+                         <td>${list[i].name}</td>
+                         <td>${list[i].address}</td>
+                         <td><button onclick="deleteList(${i})">Delete</button</td>
+                      </tr>`
+    }
+    tableString += `</table>`;
+    document.getElementById('display').innerHTML = tableString;
+  }
+</script>
+</html>
