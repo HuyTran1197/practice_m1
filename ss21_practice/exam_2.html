@@ -14,18 +14,27 @@
         findWords.push(newChar[i]);
       }
     }
+    let check = true;
     if (findWords.length<2){
-      alert("Chuỗi chỉ có 1 từ nên không cần viết tắt");
+      check = false;
     }
-    let result = "";
-    for (let i = 0; i < findWords.length; i++) {
-      result += findWords[i][0];
+    if (!check){
+      return "Chuỗi chỉ có 1 từ nên không cần viết tắt";
+    } else {
+      let result = "";
+      for (let i = 0; i < findWords.length; i++) {
+        result += findWords[i][0];
+      }
+      return result.toUpperCase();
     }
-   return result.toUpperCase();
   }
 
-  let char = "sta rt";
-  alert(findChar(char));
+  let char1 = "sta rt";
+  let char2 = "object oriented programming";
+  let char3 = "newPhuongDong";
+  alert(findChar(char1));
+  alert(findChar(char2));
+  alert(findChar(char3));
   // nếu có khoảng trắng, in từ viết tắt;
   // nếu không, in NOT;
 </script>
