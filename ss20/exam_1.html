@@ -16,11 +16,8 @@
   }
   console.log(array);
   let check = true;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < array[i+1]){
-      check = true;
-      i++
-    } else {
+  for (let i = 0; i < array.length; i+=2) {
+    if (array[i] >= array[i+1]){
       check = false;
       break;
     }
