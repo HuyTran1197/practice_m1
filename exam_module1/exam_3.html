@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let array = [1,5,6,23,8,47,10,3];
+  for (let i = 0; i < array.length; i++) {
+    let check = true;
+    for (let j = 0; j < array.length-1-i; j++) {
+      if (array[j]>array[j+1]){
+        let temp = array[j];
+        array[j] = array[j+1];
+        array[j+1] = temp;
+        check = false;
+      }
+    }
+    if (check){
+      break;
+    }
+  }
+  alert(findPrime(array));
+  function isPrime(number) {
+    if (number<2){
+      return false;
+    }
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0){
+        return false;
+      }
+    }
+    return true;
+  }
+  function findPrime(arr) {
+    let check = true;
+    for (let i = 0; i < arr.length; i++) {
+      if (!isPrime(arr[i])){
+        check = false;
+      }
+    }
+    return arr;
+  }
+</script>
+</body>
+</html>
