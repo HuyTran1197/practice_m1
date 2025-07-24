@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="addNewPhone()">Thêm mới</button>
+<p id="display"></p>
+<script>
+  // sắp xếp tên điện thoại theo thứ tự alphabet
+  class Phone {
+    constructor(id, name, produce, price) {
+      this.id = id;
+      this.name = name;
+      this.produce = produce;
+      this.price = price;
+    }
+    getId() {
+      return `HV-${this.id}`;
+    }
+    setId(id) {
+      if (id.length < 2) {
+        return false;
+      }
+      this.id = id;
+      return true;
+    }
+    setPrice(price){
+      if (isNaN(price) || price <= 0){
+        return false;
+      }
+      this.price = price;
+      return true;
+    }
+    setName(name){
+      if (!isNaN(name.trim())){
+        return false;
+      }
+      this.name = name;
+      return true;
+    }
+    setProduce(produce){
+      if (!isNaN(produce.trim())){
+        return false;
+      }
+      this.name = name;
+      return true;
+    }
+  }
+  let list1 = new Phone("001", "Iphone XS", "Apple", 600);
+  let list2 = new Phone("002", "Iphone 11 pro max", "Apple", 750);
+  let list3 = new Phone("003", "SamSung Note5", "SamSung", 700);
+  let newPhone = [list1, list2, list3];
+  showList(newPhone);
+  function addNewPhone() {
+    let id = prompt('nhập mã điện thoại');
+    let name = prompt('nhập tên điện thọai');
+    let produce = prompt('nhập hãng');
+    let price = +prompt('nhập giá');
+    let addNewPhone = new Phone(id, name, produce, price);
+    let addId = addNewPhone.setId(id);
+    let addName = addNewPhone.setName(name);
+    let addPrice = addNewPhone.setPrice(price);
+    let addProduce = addNewPhone.setProduce(produce);
+    for (let i = 0; i < newPhone.length; i++) {
+      if (newPhone[i].id === id) {
+        alert('bạn đã nhập trùng id, vui lòng nhập một id khác');
+        return;
+      }
+    }
+    if (!addName || !addId || !addPrice || !addProduce) {
+      alert("bạn đã nhập sai dữ liệu, vui lòng nhập lại");
+      return;
+    }
+    newPhone.push(addNewPhone);
+    showList(newPhone);
+  }
+  function showList(list) {
+    let tableString = `<table border="1" style="border-collapse: collapse">
+                           <tr>
+                              <th>Mã điện thoại</th>
+                              <th>Tên</th>
+                              <th>Hãng sản xuất</th>
+                              <th>Giá</th>
+                           </tr>`
+    for (let i = 0; i < list.length; i++) {
+      tableString += `<tr>
+                         <td>${list[i].getId()}</td>
+                         <td>${list[i].name}</td>
+                         <td>${list[i].produce}</td>
+                         <td>${list[i].price}</td>
+                      </tr>`
+    }
+    tableString += `</table>`;
+    document.getElementById('display').innerHTML = tableString;
+  }
+</script>
+</body>
+</html>
