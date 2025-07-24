@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let char = "abcEF";
+  alert(findUpper(char));
+  function findUpper(char) {
+    let newChar = char.split('');
+    let newUpper = [];
+    let count = 0;
+    for (let i = 0; i < newChar.length; i++) {
+      newUpper.push(newChar[i]);
+      if (newUpper[i] === newUpper[i].toUpperCase()){
+        count++;
+      }
+    }
+    return count;
+  }
+</script>
+</body>
+</html>
