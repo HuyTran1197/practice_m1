@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let array = [];
+    do {
+        n = +prompt('enter number');
+    } while(n<=0 || n>20 || isNaN(n) || n%1!==0);
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt(`enter number ${i}`);
+    }
+    alert(array);
+    let resultEvenOdd = 0;
+    let sumEven = 0;
+    let sumOdd = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i]%2===0){
+            sumEven+=array[i];
+        } else {
+            sumOdd+=array[i];
+        }
+    }
+    resultEvenOdd = sumEven - sumOdd;
+    alert(resultEvenOdd);
+</script>
+</body>
+</html>
