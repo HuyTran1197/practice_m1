@@ -6,7 +6,10 @@
 </head>
 <body>
 <script>
-  let char = "abcEF";
+  let char1 = "abcEF";
+  let char2 = "abcef";
+  alert(findUpper(char1));
+  alert(findUpper(char2));
   alert(findUpper(char));
   function findUpper(char) {
     let newChar = char.split('');
@@ -18,7 +21,11 @@
         count++;
       }
     }
-    return count;
+    if (count>0){
+      return count;
+    } else {
+      return `the Strings is not contain upper char`;
+    }
   }
 </script>
 </body>
